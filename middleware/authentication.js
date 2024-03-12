@@ -8,7 +8,6 @@ const auth = async (req, res, next) => {
     if (!authHeader || !authHeader.startsWith('Bearer')) {
         res.status(StatusCodes.UNAUTHORIZED).json({ msg: "Authentication failed. Please Sign In" })
         res.end()
-
     }
     const token = authHeader.split(" ")[1]
     try {
